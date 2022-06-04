@@ -1,0 +1,10 @@
+@import "styles/utils";
+
+.main {
+  min-height: 667px;
+  padding: 67px 0 66px;
+
+  @include media(">desktop") {
+    padding: 182px 0;
+  }
+}
