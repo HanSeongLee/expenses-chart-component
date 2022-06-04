@@ -1,8 +1,13 @@
+@import "styles/utils";
 
 .expensesChart {
   display: flex;
   flex-direction: column;
   grid-gap: 16px;
+
+  @include media(">desktop") {
+    grid-gap: 24px;
+  }
 
   .balanceBox {
     position: relative;
@@ -14,6 +19,11 @@
     border-radius: 10px;
     padding: 20px 24px 22px 20px;
 
+    @include media(">desktop") {
+      grid-gap: 8px;
+      padding: 27px 39px 25px 32px;
+    }
+
     &::before {
       position: absolute;
       top: 50%;
@@ -24,6 +34,12 @@
       border-radius: 50%;
       transform: translateY(-50%);
       content: "";
+
+      @include media(">desktop") {
+        right: 39px;
+        width: 48px;
+        height: 48px;
+      }
     }
 
     &::after {
@@ -36,17 +52,34 @@
       border-radius: 50%;
       transform: translateY(-50%);
       content: "";
+
+      @include media(">desktop") {
+        right: 63px;
+        width: 46px;
+        height: 46px;
+      }
     }
 
     .label {
       font-size: 15px;
       line-height: 20px;
+
+      @include media(">desktop") {
+        font-size: 18px;
+        line-height: 23px;
+      }
     }
 
     .balance {
       font-weight: 700;
       font-size: 24px;
       line-height: 31px;
+      color: #FFFBF6;
+
+      @include media(">desktop") {
+        font-size: 32px;
+        line-height: 42px;
+      }
     }
   }
 
@@ -55,12 +88,22 @@
     border-radius: 10px;
     padding: 24px 20px;
 
+    @include media(">desktop") {
+      padding: 32px 39.5px 40px 40px;
+    }
+
     .title {
       font-weight: 700;
       font-size: 24px;
       line-height: 31px;
       color: #382314;
       margin-bottom: 52px;
+
+      @include media(">desktop") {
+        font-size: 32px;
+        line-height: 42px;
+        margin-bottom: 66px;
+      }
     }
 
     .chart {
@@ -70,6 +113,10 @@
       align-items: flex-end;
       text-align: center;
       grid-gap: 12px;
+
+      @include media(">desktop") {
+        grid-gap: 17.91px;
+      }
 
       @keyframes fadeInUp {
         0% {
@@ -93,6 +140,11 @@
         line-height: 16px;
         color: #92857A;
         cursor: pointer;
+
+        @include media(">desktop") {
+          font-size: 15px;
+          line-height: 20px;
+        }
 
         &::before {
           position: relative;
@@ -143,6 +195,10 @@
       margin: 24px 0;
       border: none;
       border-radius: 1px;
+
+      @include media(">desktop") {
+        margin: 32px 0;
+      }
     }
   }
 
@@ -154,6 +210,10 @@
       display: flex;
       flex-direction: column;
       grid-gap: 4px;
+
+      @include media(">desktop") {
+        grid-gap: 1px;
+      }
     }
 
     .rightSide {
@@ -167,6 +227,11 @@
       font-size: 15px;
       line-height: 20px;
       color: #92857A;
+
+      @include media(">desktop") {
+        font-size: 18px;
+        line-height: 23px;
+      }
     }
 
     .total {
@@ -174,6 +239,11 @@
       font-size: 30px;
       line-height: 39px;
       color: #382314;
+
+      @include media(">desktop") {
+        font-size: 48px;
+        line-height: 62px;
+      }
     }
 
     .variation {
@@ -181,6 +251,11 @@
       font-size: 15px;
       line-height: 20px;
       color: #382314;
+
+      @include media(">desktop") {
+        font-size: 18px;
+        line-height: 23px;
+      }
     }
   }
 }
