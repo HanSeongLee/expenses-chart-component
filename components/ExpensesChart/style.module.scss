@@ -49,4 +49,138 @@
       line-height: 31px;
     }
   }
+
+  .expensesChartBox {
+    background: #FFFBF6;
+    border-radius: 10px;
+    padding: 24px 20px;
+
+    .title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+      color: #382314;
+      margin-bottom: 52px;
+    }
+
+    .chart {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: center;
+      grid-gap: 12px;
+
+      @keyframes fadeInUp {
+        0% {
+          top: 0;
+          opacity: 0;
+        }
+
+        100% {
+          top: -8px;
+          opacity: 1;
+        }
+      }
+
+      li {
+        position: relative;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 11px;
+        font-size: 12px;
+        line-height: 16px;
+        color: #92857A;
+        cursor: pointer;
+
+        &::before {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: red;
+          height: calc(var(--height) * 150px);
+          background: var(--barColor);
+          border-radius: 3px;
+          content: "";
+          transition: background 0.3s;
+        }
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 23px;
+          color: #FFFBF6;
+          background: #382314;
+          border-radius: 5px;
+          transform: translateX(-50%) translateY(-100%);
+          padding: 8px 8px 9px;
+          z-index: 1;
+          opacity: 0;
+          content: "$" attr(data-amount);
+        }
+
+        &:hover {
+          &::before {
+            background: var(--barHoverColor);
+          }
+
+          &::after {
+            animation: fadeInUp 0.3s both;
+          }
+        }
+      }
+    }
+
+    .splitter {
+      width: 100%;
+      height: 2px;
+      background: #F8E9DD;
+      margin: 24px 0;
+      border: none;
+      border-radius: 1px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+
+    .leftSide {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 4px;
+    }
+
+    .rightSide {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .label {
+      font-size: 15px;
+      line-height: 20px;
+      color: #92857A;
+    }
+
+    .total {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 39px;
+      color: #382314;
+    }
+
+    .variation {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 20px;
+      color: #382314;
+    }
+  }
 }
