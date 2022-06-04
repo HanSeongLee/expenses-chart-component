@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             Expenses Chart Component
           </h1>
           <Container>
-            <ExpensesChartContainer/>
+            <ExpensesChartContainer className={styles.expensesChartContainer}/>
           </Container>
         </main>
       </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {HTMLAttributes} from 'react';
 import ExpensesChart from '../../components/ExpensesChart';
 import {IDaySpending} from '../../types/spending';
 
@@ -33,13 +33,15 @@ const data: IDaySpending[] = [
     }
 ];
 
-const ExpensesChartContainer: React.FC = () => {
+const ExpensesChartContainer: React.FC<HTMLAttributes<HTMLDivElement>> = (props) => {
     return (
-        <ExpensesChart balance={921.48}
-                       data={data}
-                       total={478.33}
-                       variation={2.4}
-        />
+        <div {...props}>
+            <ExpensesChart balance={921.48}
+                           data={data}
+                           total={478.33}
+                           variation={2.4}
+            />
+        </div>
     );
 };
 

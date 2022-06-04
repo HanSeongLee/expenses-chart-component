@@ -1,11 +1,13 @@
 @import "styles/utils";
 
 .expensesChart {
+  max-width: 343px;
   display: flex;
   flex-direction: column;
   grid-gap: 16px;
 
   @include media(">desktop") {
+    max-width: 540px;
     grid-gap: 24px;
   }
 
