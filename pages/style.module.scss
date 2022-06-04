@@ -7,4 +7,9 @@
   @include media(">desktop") {
     padding: 182px 0;
   }
+
+  .title {
+    position: absolute;
+    top: -9999px;
+  }
 }
